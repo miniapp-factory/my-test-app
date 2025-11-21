@@ -80,7 +80,7 @@ function QuizContent() {
   const [current, setCurrent] = useState(0);
 
   const handleSelect = (animal: Animal) => {
-    setAnswer(current, animal as any);
+    setAnswer(current, animal);
     setCurrent((c) => c + 1);
   };
 
