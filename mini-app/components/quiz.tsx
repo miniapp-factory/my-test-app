@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import type { Animal } from "./quiz-context";
 import { QuizProvider, useQuiz } from "./quiz-context";
 import QuizResult from "./quiz-result";
 
@@ -75,10 +76,10 @@ export default function Quiz() {
 }
 
 function QuizContent() {
-  const { answers, setAnswer, reset } = useQuiz();
+  const { setAnswer, reset } = useQuiz();
   const [current, setCurrent] = useState(0);
 
-  const handleSelect = (animal: string) => {
+  const handleSelect = (animal: Animal) => {
     setAnswer(current, animal as any);
     setCurrent((c) => c + 1);
   };
